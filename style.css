@@ -8,20 +8,44 @@ body {
   background-color: #f9f9f9;
   color: #333333;
 }
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  background-color: #ffffff;
-}
+
 header {
   text-align: center;
-  padding-bottom: 20px;
+  width: 1000px;
+  padding-bottom: 5px;
 }
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0px;
+  background-color: #ffffff;
+}
+
 header img {
   width: 150px;
   border-radius: 50%;
 }
+
+.wrapper {
+  margin: 0px auto;
+  width: 1000px;
+}
+
+.column1 {
+  float: left;
+  width: 450px;
+  text-align: center;
+  padding-right: 50px;
+}
+
+.column2 {
+  float: left;
+  width: 450px;
+  text-align: center;
+  padding-left: 50px;
+}
+
 h1 {
   margin: 10px 0 5px;
   text-align: center;
@@ -43,7 +67,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.contact,
+
 .socials {
   margin-top: 30px;
 }
