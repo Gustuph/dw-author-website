@@ -35,11 +35,55 @@ function myFunction() {
  }
 </script>
 <div class="gallery">
+  
+
   <div class="feature-box" id="featureBox">
-    <img id="featureImg" src="img/cinema.JPG">
-    <a href="https://gustuph.github.io/digital-writing-haunt/"><h2 id="featureTitle">The Blazing Spirits (2026)</h2></a>
+    <img id="featureImg" src="img/cinema.JPG" alt="Featured Art">
+    <h2 id="featureTitle">The Blazing Spirits (2026)</h2>
     <p id="featureDesc">In the classic styling of Angus, this piece explores grief and the ability of a character to forgive the people responsible, and the role that plays in relinquishing their own guilt.</p>
-    <p id="featureMeta"><small>A work of electronic literature that invites the reader to take on the investigation pursued by the protagonist</small></p>
+    <p id="featureLink"><a href="https://gustuph.github.io/digital-writing-haunt/">Click here to play</a></p>
   </div>
+
+  <div class="nav-buttons">
+    <button onclick="previousFeature()">Previous</button>
+    <button onclick="nextFeature()">Next</button>
+  </div>
+  </div>
+  <script>
+    const features = [
+      {
+        img: "img/cinema.JPG",
+        title: "The Blazing Spirits (2026)",
+        desc: "In the classic styling of Angus, this piece explores grief and the ability of a character to forgive the people responsible, and the role that plays in relinquishing their own guilt.",
+        link: "<a href=\"https://gustuph.github.io/digital-writing-haunt/\">Click here to play</a>",
+      },
+      {
+        img: "img/bitsy.jpg",
+        title: "Bitsy Game: Bus Catcher (2026)",
+        desc: "An experiment in using the Bitsy game engine that, if you look really closely, contains a critique of the victorian public transport system and car culture.",
+        link: "<a href=\"https://gustuph.github.io/dw-bitsy/\">Click here to play</a>",
+      },
+    ];
+
+    let current = 0;
+
+    function updateFeature() {
+      const feature = features[current];
+      document.getElementById('featureImg').src = feature.img;
+      document.getElementById('featureTitle').textContent = feature.title;
+      document.getElementById('featureDesc').textContent = feature.desc;
+      document.getElementById('featureLink').innerHTML = feature.link;
+    }
+
+    function nextFeature() {
+      current = (current + 1) % features.length;
+      updateFeature();
+    }
+
+    function previousFeature() {
+      current = (current - 1 + features.length) % features.length;
+      updateFeature();
+    }
+  </script>
 </body>
 </html>
